@@ -22,6 +22,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  color: rgb(213, 36, 36);
+  text-shadow: #FC0 1px 0 10px;
 }
 
 .App-link {

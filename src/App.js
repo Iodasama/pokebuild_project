@@ -1,25 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import GetListPokeApi from "./GetListPokeApi";
+import GetAllStylePokeApiList from './GetAllStylePokeApiList';
+import GetWaterPokeApiList from './GetWaterPokeApiList';
+import GetFirePokeApiList from './GetFirePokeApiList';
+import GetInsectePokeApiList from './GetPlantPokeApiList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+
+
+    <>
+      <Header />
+      <GetListPokeApi />
+      <GetAllStylePokeApiList />
+      <GetWaterPokeApiList />
+      <GetFirePokeApiList />
+      <GetInsectePokeApiList />
+      
+    </>
   );
 }
+
+
+
 
 export default App;
