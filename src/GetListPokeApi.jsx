@@ -1,9 +1,9 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 const GetListPokeAPI= ()=> {
 
 const [pokemons, setPokemons] = useState(null);
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
+useEffect(()=>{fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
     .then((response) => {
       return response.json();
     })
@@ -11,11 +11,13 @@ fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
 setPokemons(data);
     });
 
+},[]);
+
     return ( 
         <section> 
             <h2> La liste des 100 premiers pokemons (mais les vrais savent toujours qu'il y en a que 151)</h2>
             {!pokemons ? (
-            <p>Pokemons en cours de chargement</p>
+            <p>Pokemons loading</p>
         ) : ( 
     <>    
     {pokemons.map ((pokemon)=>{ 

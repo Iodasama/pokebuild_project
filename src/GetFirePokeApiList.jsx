@@ -1,16 +1,17 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const GetFirePokeApiList= ()=> {
 
 const [pokemons, setPokemons] = useState(null);
 
-fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Feu")
+useEffect(()=>{fetch("https://pokebuildapi.fr/api/v1/pokemon/type/Feu")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
 setPokemons(data);
     });
+}, []);
 
     return ( 
         <section> 
